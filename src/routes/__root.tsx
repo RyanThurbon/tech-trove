@@ -72,7 +72,7 @@ function RootDocument({ children }: { children: ReactNode }) {
 	return (
 		<html lang="en">
 			<head>
-				<title>Tech Trove</title>
+				<title>TechTrove</title>
 				<HeadContent />
 			</head>
 			<body>
