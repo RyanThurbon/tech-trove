@@ -6,11 +6,11 @@ import {
 import appCss from "../styles.css?url";
 import type { QueryClient } from "@tanstack/react-query";
 import { Navbar } from "@/components/shared/navbar";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Hero } from "@/components/hero.tsx";
 import { ContentLayout } from "@/components/layouts/content-layout.tsx";
 import { ReactNode } from "react";
 import { z } from "zod";
+import { Analytics } from "@vercel/analytics/react";
 
 interface MyRouterContext {
 	queryClient: QueryClient;
@@ -83,7 +83,8 @@ function RootDocument({ children }: { children: ReactNode }) {
 						{children}
 					</div>
 				</ContentLayout>
-				<ReactQueryDevtools buttonPosition="bottom-right" />
+				{/*<ReactQueryDevtools buttonPosition="bottom-right" />*/}
+				<Analytics />
 				<Scripts />
 			</body>
 		</html>

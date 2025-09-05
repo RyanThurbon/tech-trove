@@ -54,7 +54,7 @@ export default function PaginationNavigation({
 		<div className="flex items-center justify-between gap-3 mt-4">
 			{/* Page number information */}
 			<p
-				className="text-muted-foreground flex-1 text-sm whitespace-nowrap"
+				className="text-muted-foreground flex-1 text-sm whitespace-nowrap hidden lg:block"
 				aria-live="polite"
 			>
 				Page <span className="text-foreground">{currentPage}</span> of{" "}
