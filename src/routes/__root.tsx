@@ -11,6 +11,7 @@ import { ContentLayout } from "@/components/layouts/content-layout.tsx";
 import { ReactNode } from "react";
 import { z } from "zod";
 import { Analytics } from "@vercel/analytics/react";
+import { Footer } from "@/components/shared/footer.tsx";
 
 interface MyRouterContext {
 	queryClient: QueryClient;
@@ -77,12 +78,15 @@ function RootDocument({ children }: { children: ReactNode }) {
 			</head>
 			<body>
 				<Navbar />
-				<ContentLayout className="py-16">
-					<div className="flex flex-col gap-y-10">
-						<Hero />
-						{children}
-					</div>
-				</ContentLayout>
+				<main className="flex min-h-screen">
+					<ContentLayout className="pt-16 flex flex-col min-h-screen">
+						<div className="flex flex-col gap-y-10 flex-1">
+							<Hero />
+							{children}
+						</div>
+						<Footer />
+					</ContentLayout>
+				</main>
 				{/*<ReactQueryDevtools buttonPosition="bottom-right" />*/}
 				<Analytics />
 				<Scripts />

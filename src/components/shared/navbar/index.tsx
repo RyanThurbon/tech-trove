@@ -9,7 +9,7 @@ export type Nav = {
 	to: LinkOptions["to"];
 };
 
-const nav: Nav[] = [
+export const nav: Nav[] = [
 	{
 		label: "Top Stories",
 		to: "/",
