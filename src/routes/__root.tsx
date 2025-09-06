@@ -13,16 +13,18 @@ import { z } from "zod";
 import { Analytics } from "@vercel/analytics/react";
 import { Footer } from "@/components/shared/footer.tsx";
 
-interface MyRouterContext {
+interface IRootRouteContext {
 	queryClient: QueryClient;
 }
 
-const rootSearchParamSchema = z.object({
-	page: z.number().min(1).optional().default(1),
-	perPage: z.number().min(1).optional().default(3),
-});
+const rootSearchParamSchema = z
+	.object({
+		page: z.number().min(1).optional(),
+		perPage: z.number().min(1).optional(),
+	})
+	.optional();
 
-export const Route = createRootRouteWithContext<MyRouterContext>()({
+export const Route = createRootRouteWithContext<IRootRouteContext>()({
 	head: () => ({
 		meta: [
 			{

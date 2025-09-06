@@ -17,16 +17,12 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import {
-	LinkOptions,
-	useNavigate,
-	useRouterState,
-} from "@tanstack/react-router";
+import { useNavigate, useRouterState } from "@tanstack/react-router";
 
 type PaginationProps = {
 	currentPage: number;
 	totalPages: number;
-	route: LinkOptions["to"];
+	route: string;
 	paginationItemsToDisplay?: number;
 };
 
@@ -48,7 +44,7 @@ export default function PaginationNavigation({
 		select: (state) => state.location,
 	});
 
-	const { perPage } = location.search;
+	const currentSearch = location.search;
 
 	return (
 		<div className="flex items-center justify-between gap-3 mt-4">
@@ -74,6 +70,7 @@ export default function PaginationNavigation({
 									await navigate({
 										to: route as string,
 										search: {
+											...currentSearch,
 											page: currentPage - 1,
 										},
 									});
@@ -104,6 +101,7 @@ export default function PaginationNavigation({
 										await navigate({
 											to: route as string,
 											search: {
+												...currentSearch,
 												page,
 											},
 										});
@@ -131,6 +129,7 @@ export default function PaginationNavigation({
 									await navigate({
 										to: route as string,
 										search: {
+											...currentSearch,
 											page: currentPage + 1,
 										},
 									});
@@ -160,14 +159,14 @@ export default function PaginationNavigation({
 			{/* Results per page */}
 			<div className="flex flex-1 justify-end">
 				<Select
-					defaultValue={String(perPage)}
-					value={String(perPage)}
+					defaultValue={String(currentSearch?.perPage ?? 3)}
+					value={String(currentSearch?.perPage ?? 3)}
 					aria-label="Results per page"
 					onValueChange={async (value) => {
 						await navigate({
 							to: route as string,
 							search: {
-								page: currentPage,
+								...currentSearch,
 								perPage: Number(value),
 							},
 						});
