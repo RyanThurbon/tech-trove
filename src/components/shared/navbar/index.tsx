@@ -19,7 +19,7 @@ export const nav: Nav[] = [
 		to: "/new-stories",
 	},
 	{
-		label: "Highly Rated",
+		label: "Best",
 		to: "/best-stories",
 	},
 	{
