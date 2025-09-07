@@ -11,23 +11,23 @@ export type Nav = {
 
 export const nav: Nav[] = [
 	{
-		label: "Top Stories",
+		label: "Trending",
 		to: "/",
 	},
 	{
-		label: "New Stories",
+		label: "Recent",
 		to: "/new-stories",
 	},
 	{
-		label: "Best Stories",
+		label: "Highly Rated",
 		to: "/best-stories",
 	},
 	{
-		label: "Show Stories",
+		label: "Showcases",
 		to: "/show-stories",
 	},
 	{
-		label: "Job Stories",
+		label: "Jobs",
 		to: "/job-stories",
 	},
 ];

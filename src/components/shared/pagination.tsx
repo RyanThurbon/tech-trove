@@ -47,7 +47,7 @@ export default function PaginationNavigation({
 	const currentSearch = location.search;
 
 	return (
-		<div className="flex items-center justify-between gap-3 mt-4">
+		<div className="flex items-center flex-col md:flex-row md:justify-between gap-3 mt-4">
 			{/* Page number information */}
 			<p
 				className="text-muted-foreground flex-1 text-sm whitespace-nowrap hidden lg:block"
