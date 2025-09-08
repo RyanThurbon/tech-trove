@@ -1,4 +1,3 @@
-import { ContentLayout } from "@/components/layouts/content-layout.tsx";
 import { LinkOptions } from "@tanstack/react-router";
 import { DesktopNavbar } from "@/components/shared/navbar/desktop.tsx";
 import { MobileNavbar } from "@/components/shared/navbar/mobile.tsx";
@@ -35,14 +34,12 @@ export const nav: Nav[] = [
 export function Navbar() {
 	return (
 		<section id="navbar">
-			<header className="flex justify-center bg-card border-b border-primary py-4">
-				<ContentLayout>
-					<nav className="flex items-center justify-between">
-						<Logo />
-						<DesktopNavbar nav={nav} />
-						<MobileNavbar nav={nav} />
-					</nav>
-				</ContentLayout>
+			<header className="flex justify-center border-b border-primary py-4">
+				<nav className="flex items-center justify-between w-full">
+					<Logo />
+					<DesktopNavbar nav={nav} />
+					<MobileNavbar nav={nav} />
+				</nav>
 			</header>
 		</section>
 	);

@@ -1,7 +1,6 @@
 import {
 	createRootRouteWithContext,
 	HeadContent,
-	Scripts,
 } from "@tanstack/react-router";
 import appCss from "../styles.css?url";
 import type { QueryClient } from "@tanstack/react-query";
@@ -10,7 +9,6 @@ import { Hero } from "@/components/hero.tsx";
 import { ContentLayout } from "@/components/layouts/content-layout.tsx";
 import { ReactNode } from "react";
 import { z } from "zod";
-import { Analytics } from "@vercel/analytics/react";
 import { Footer } from "@/components/shared/footer.tsx";
 
 interface IRootRouteContext {
@@ -79,19 +77,16 @@ function RootDocument({ children }: { children: ReactNode }) {
 				<HeadContent />
 			</head>
 			<body>
-				<Navbar />
-				<main className="flex min-h-screen">
-					<ContentLayout className="pt-16 flex flex-col min-h-screen">
-						<div className="flex flex-col gap-y-10 flex-1">
+				<ContentLayout>
+					<main className="flex flex-col min-h-screen">
+						<Navbar />
+						<div className="flex flex-col gap-y-10 flex-1 mt-16">
 							<Hero />
 							{children}
 						</div>
 						<Footer />
-					</ContentLayout>
-				</main>
-				{/*<ReactQueryDevtools buttonPosition="bottom-right" />*/}
-				<Analytics />
-				<Scripts />
+					</main>
+				</ContentLayout>
 			</body>
 		</html>
 	);

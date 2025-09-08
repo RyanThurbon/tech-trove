@@ -9,7 +9,7 @@ export function ContentLayout(props: ContentLayoutProps) {
 	return (
 		<div
 			className={cn(
-				"container mx-auto max-w-6xl px-4 sm:px-6",
+				"container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8",
 				props.className,
 			)}
 		>

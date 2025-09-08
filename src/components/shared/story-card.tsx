@@ -42,7 +42,7 @@ export function StoryCard({ story, isJob }: { story: Story; isJob?: boolean }) {
 			</CardHeader>
 			<CardContent>{story.title}</CardContent>
 			<CardFooter className="flex items-center gap-x-2">
-				<Button asChild variant="secondary">
+				<Button variant="secondary">
 					<a
 						href={`https://news.ycombinator.com/item?id=${story.id}`}
 						target="_blank"
