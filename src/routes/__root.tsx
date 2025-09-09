@@ -10,6 +10,8 @@ import { ContentLayout } from "@/components/layouts/content-layout.tsx";
 import { ReactNode } from "react";
 import { z } from "zod";
 import { Footer } from "@/components/shared/footer.tsx";
+import { Analytics } from "@vercel/analytics/react";
+import { Scripts } from "@tanstack/react-start";
 
 interface IRootRouteContext {
 	queryClient: QueryClient;
@@ -87,6 +89,8 @@ function RootDocument({ children }: { children: ReactNode }) {
 						<Footer />
 					</main>
 				</ContentLayout>
+				<Analytics />
+				<Scripts />
 			</body>
 		</html>
 	);
